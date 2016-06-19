@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: edu.gatech.mbse.transformations.sysml2milp.tests
+Bundle-SymbolicName: edu.gatech.mbse.transformations.sysml2milp.tests
+Bundle-Version: 1.1.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.emf.ecore,
+ org.junit,
+ org.eclipse.uml2.uml,
+ edu.gatech.mbse.transformations.sysml2milp,
+ org.eclipse.uml2.uml.resources,
+ org.eclipse.papyrus.sysml,
+ org.eclipse.emf.common
+Bundle-ClassPath: lib/matlabcontrol-4.1.0.jar,
+ .

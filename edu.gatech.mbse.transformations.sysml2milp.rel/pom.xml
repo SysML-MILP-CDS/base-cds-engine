@@ -1,0 +1,147 @@
+<!-- 
+	Note that for Jenkins to compile and test project correctly, the workspace that the project is checked out
+	into MUST NOT contain any spaces!
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>edu.gatech.mbse.transformations</groupId>
+	<artifactId>sysml2milp-rel</artifactId>
+	<version>1.1.0-SNAPSHOT</version>
+	<name>edu.gatech.mbse.transformations.sysml2milp.rel</name>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>
+  		../edu.gatech.mbse.transformations.sysml2milp
+  		</module>
+		<module>
+  		../edu.gatech.mbse.transformations.sysml2milp.tests
+  		</module>
+	</modules>
+
+	<properties>
+		<tycho.version>0.23.0</tycho.version>
+		<mars-repo.url>http://download.eclipse.org/releases/mars</mars-repo.url>
+		<!-- <mars-repo.url>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/mars/main</mars-repo.url> -->
+		<!-- <mars-extras-repo.url>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/mars/extra</mars-extras-repo.url> -->
+		<sysml.profile.path>../edu.gatech.mbse.transformations.sysml2milp.tests/sysml/SysML.profile.uml</sysml.profile.path>
+	</properties>
+
+	<repositories>
+
+		<repository>
+			<id>mars</id>
+			<url>${mars-repo.url}</url>
+			<layout>p2</layout>
+		</repository>
+
+		<!-- <repository> <id>mars-extra</id> <url>${mars-extras-repo.url}</url> 
+			<layout>p2</layout> </repository> -->
+
+		<repository>
+			<id>matlabcontrol-socsol</id>
+			<url>https://socsol.github.io/matlabcontrol-maven</url>
+		</repository>
+
+	</repositories>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>matlabcontrol</groupId>
+			<artifactId>matlabcontrol</artifactId>
+			<version>4.1.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.12</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<extensions>true</extensions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<environments>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-surefire-plugin</artifactId>
+				<version>${tycho.version}</version>
+
+				<!-- Used by Jenkins - not sure whether there is a better way - passing 
+					this via command line doesn't seem to work with Tycho? -->
+				<configuration>
+					<systemProperties>
+						<sysml.profile.path>${sysml.profile.path}</sysml.profile.path>
+						<tycho.opti.root>${opti.root}</tycho.opti.root>
+						<tycho.yalmip.root>${yalmip.root}</tycho.yalmip.root>
+						<tycho.matlab.loc>${matlab.loc}</tycho.matlab.loc>
+						<tycho.milp.solver>${milp.solver}</tycho.milp.solver>
+					</systemProperties>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Blocks="http://www.eclipse.org/papyrus/0.7.0/SysML/Blocks" xmlns:DSEProfile="http:///schemas/DSEProfile/_ZetusDrDEeWAc7Y4j_FYgA/13" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/papyrus/0.7.0/SysML/Blocks http://www.eclipse.org/papyrus/0.7.0/SysML#//blocks http:///schemas/DSEProfile/_ZetusDrDEeWAc7Y4j_FYgA/13 ../DSEProfile/DSEProfile.profile.uml#_Zeu80DrDEeWAc7Y4j_FYgA">
+  <uml:Model xmi:id="_2rtKMCQCEeWlqN38Mn9EQA" name="RootElement">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_gtm-YCQGEeWlqN38Mn9EQA">
+      <body>This example demonstrates how expert knowledge can be specified by specializing elements from the model library and redefining their properties.</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_BUUf8CQJEeWlqN38Mn9EQA">
+      <body>Note: this is not really necessary... perhaps remove the owned behavior from the library element?</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_e9FSkCQfEeWdwZTMFWWnmg">
+      <body>RULE: Must define a non-abstract workpiece with mass default value set</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_EfVL8CQgEeWdwZTMFWWnmg">
+      <body>RULE: An objective must be defined</body>
+    </ownedComment>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_w0XkkCQcEeWdwZTMFWWnmg">
+      <importedPackage xmi:type="uml:Model" href="../DSELibrary/DSELibrary.uml#_mhdx8BN0EeWthIkkIMQnYA"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_KhOjICQDEeWlqN38Mn9EQA" name="ClinchingCell">
+      <ownedRule xmi:type="uml:Constraint" xmi:id="_JBNbsCQgEeWdwZTMFWWnmg" name="objective">
+        <specification xmi:type="uml:LiteralString" xmi:id="_JBlPICQgEeWdwZTMFWWnmg" name="constraintSpec" value="cost"/>
+      </ownedRule>
+      <generalization xmi:type="uml:Generalization" xmi:id="_fm_UkCQGEeWlqN38Mn9EQA">
+        <general xmi:type="uml:Class" href="../DSELibrary/DSELibrary.uml#_InrO4BUNEeWdZqvVzWkEVA"/>
+      </generalization>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_ve_dICQIEeWlqN38Mn9EQA" name="ManufacturingProcess" node="_dy71oCQJEeWlqN38Mn9EQA _dy8csCQJEeWlqN38Mn9EQA _ncABoCQJEeWlqN38Mn9EQA _wjUygCQJEeWlqN38Mn9EQA _EuBQkCQSEeWlqN38Mn9EQA _TuQjUCQXEeWlqN38Mn9EQA _adOVsCQXEeWlqN38Mn9EQA _jnOnICQXEeWlqN38Mn9EQA">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3BJeoCQWEeWlqN38Mn9EQA" annotatedElement="_EuBQkCQSEeWlqN38Mn9EQA">
+          <body>This CBA's behavior is defined by the specialized clinch seam activity, which uses the DFG500/150</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_xv87sCQfEeWdwZTMFWWnmg">
+          <body>RULE: Pins MUST use non-abstract workpiece type</body>
+        </ownedComment>
+        <generalization xmi:type="uml:Generalization" xmi:id="_9xrfoCQIEeWlqN38Mn9EQA">
+          <general xmi:type="uml:Activity" href="../DSELibrary/DSELibrary.uml#_BekdMBUYEeWdZqvVzWkEVA"/>
+        </generalization>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_dy5ZYCQJEeWlqN38Mn9EQA" name="workpieceIn" type="_ajomECQfEeWdwZTMFWWnmg" direction="inout" effect="update"/>
+        <edge xmi:type="uml:ObjectFlow" xmi:id="_v5I6ICQWEeWlqN38Mn9EQA" target="_JvgNciQSEeWlqN38Mn9EQA" source="_dy71oCQJEeWlqN38Mn9EQA"/>
+        <edge xmi:type="uml:ObjectFlow" xmi:id="_wkVMMCQWEeWlqN38Mn9EQA" target="_gbSFAiQWEeWlqN38Mn9EQA" source="_Jvg0gCQSEeWlqN38Mn9EQA"/>
+        <edge xmi:type="uml:ObjectFlow" xmi:id="_xUlkcCQWEeWlqN38Mn9EQA" target="_KxJQoSQSEeWlqN38Mn9EQA" source="_gbTTIiQWEeWlqN38Mn9EQA"/>
+        <edge xmi:type="uml:ObjectFlow" xmi:id="_ztPd4CQWEeWlqN38Mn9EQA" target="_dy8csCQJEeWlqN38Mn9EQA" source="_KxKewiQSEeWlqN38Mn9EQA"/>
+        <edge xmi:type="uml:ObjectFlow" xmi:id="_4_u1wCQXEeWlqN38Mn9EQA" target="_JvfmYCQSEeWlqN38Mn9EQA" source="_z9RogCQXEeWlqN38Mn9EQA"/>
+        <edge xmi:type="uml:ObjectFlow" xmi:id="_5mmBcCQXEeWlqN38Mn9EQA" target="_gbQP0CQWEeWlqN38Mn9EQA" source="_1KtsACQXEeWlqN38Mn9EQA"/>
+        <edge xmi:type="uml:ObjectFlow" xmi:id="_6Jq5UCQXEeWlqN38Mn9EQA" target="_KxGNUCQSEeWlqN38Mn9EQA" source="_19qL4CQXEeWlqN38Mn9EQA"/>
+        <node xmi:type="uml:ActivityParameterNode" xmi:id="_dy71oCQJEeWlqN38Mn9EQA" name="workpieceIn" outgoing="_v5I6ICQWEeWlqN38Mn9EQA" type="_ajomECQfEeWdwZTMFWWnmg" parameter="_dy5ZYCQJEeWlqN38Mn9EQA">
+          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_dy71oSQJEeWlqN38Mn9EQA" value="1"/>
+        </node>
+        <node xmi:type="uml:ActivityParameterNode" xmi:id="_dy8csCQJEeWlqN38Mn9EQA" name="finishedProductOut" incoming="_ztPd4CQWEeWlqN38Mn9EQA" type="_ajomECQfEeWdwZTMFWWnmg" parameter="_dy5ZYCQJEeWlqN38Mn9EQA">
+          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_dy8csSQJEeWlqN38Mn9EQA" value="1"/>
+        </node>
+        <node xmi:type="uml:CallBehaviorAction" xmi:id="_ncABoCQJEeWlqN38Mn9EQA" name="clinchFirstEnd">
+          <argument xmi:type="uml:InputPin" xmi:id="_JvgNciQSEeWlqN38Mn9EQA" name="workpiece" incoming="_v5I6ICQWEeWlqN38Mn9EQA" type="_ajomECQfEeWdwZTMFWWnmg">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_JvgNdCQSEeWlqN38Mn9EQA" source="PinToParameterLink">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_JvgNdSQSEeWlqN38Mn9EQA" key="PinToParameterLink" value="_WVddQBT8EeWdZqvVzWkEVA"/>
+            </eAnnotations>
+            <upperBound xmi:type="uml:LiteralInteger" xmi:id="_JvgNcyQSEeWlqN38Mn9EQA" value="1"/>
+          </argument>
+          <argument xmi:type="uml:InputPin" xmi:id="_JvfmYCQSEeWlqN38Mn9EQA" name="desiredForce" incoming="_4_u1wCQXEeWlqN38Mn9EQA">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_JvgNcCQSEeWlqN38Mn9EQA" source="PinToParameterLink">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_JvgNcSQSEeWlqN38Mn9EQA" key="PinToParameterLink" value="_VU8-UBUDEeWdZqvVzWkEVA"/>
+            </eAnnotations>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+            <upperBound xmi:type="uml:LiteralInteger" xmi:id="_JvfmYSQSEeWlqN38Mn9EQA" value="1"/>
+          </argument>
+          <result xmi:type="uml:OutputPin" xmi:id="_Jvg0gCQSEeWlqN38Mn9EQA" name="workpiece" outgoing="_wkVMMCQWEeWlqN38Mn9EQA" type="_ajomECQfEeWdwZTMFWWnmg">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Jvg0giQSEeWlqN38Mn9EQA" source="PinToParameterLink">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Jvg0gyQSEeWlqN38Mn9EQA" key="PinToParameterLink" value="_WVddQBT8EeWdZqvVzWkEVA"/>
+            </eAnnotations>
+            <upperBound xmi:type="uml:LiteralInteger" xmi:id="_Jvg0gSQSEeWlqN38Mn9EQA" value="1"/>
+          </result>
+          <behavior xmi:type="uml:Activity" href="../DSELibrary/DSELibrary.uml#_4wMI4BT4EeWdZqvVzWkEVA"/>
+        </node>
+        <node xmi:type="uml:CallBehaviorAction" xmi:id="_wjUygCQJEeWlqN38Mn9EQA" name="clinchSecondEnd">
+          <argument xmi:type="uml:InputPin" xmi:id="_KxJQoSQSEeWlqN38Mn9EQA" name="workpiece" incoming="_xUlkcCQWEeWlqN38Mn9EQA" type="_ajomECQfEeWdwZTMFWWnmg">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KxKewCQSEeWlqN38Mn9EQA" source="PinToParameterLink">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KxKewSQSEeWlqN38Mn9EQA" key="PinToParameterLink" value="_WVddQBT8EeWdZqvVzWkEVA"/>
+            </eAnnotations>
+            <upperBound xmi:type="uml:LiteralInteger" xmi:id="_KxJQoiQSEeWlqN38Mn9EQA" value="1"/>
+          </argument>
+          <argument xmi:type="uml:InputPin" xmi:id="_KxGNUCQSEeWlqN38Mn9EQA" name="desiredForce" incoming="_6Jq5UCQXEeWlqN38Mn9EQA">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KxIpkCQSEeWlqN38Mn9EQA" source="PinToParameterLink">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KxJQoCQSEeWlqN38Mn9EQA" key="PinToParameterLink" value="_VU8-UBUDEeWdZqvVzWkEVA"/>
+            </eAnnotations>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+            <upperBound xmi:type="uml:LiteralInteger" xmi:id="_KxGNUSQSEeWlqN38Mn9EQA" value="1"/>
+          </argument>
+          <result xmi:type="uml:OutputPin" xmi:id="_KxKewiQSEeWlqN38Mn9EQA" name="workpiece" outgoing="_ztPd4CQWEeWlqN38Mn9EQA" type="_ajomECQfEeWdwZTMFWWnmg">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KxLs4CQSEeWlqN38Mn9EQA" source="PinToParameterLink">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KxLs4SQSEeWlqN38Mn9EQA" key="PinToParameterLink" value="_WVddQBT8EeWdZqvVzWkEVA"/>
+            </eAnnotations>
+            <upperBound xmi:type="uml:LiteralInteger" xmi:id="_KxKewyQSEeWlqN38Mn9EQA" value="1"/>
+          </result>
+          <behavior xmi:type="uml:Activity" href="../DSELibrary/DSELibrary.uml#_4wMI4BT4EeWdZqvVzWkEVA"/>
+        </node>
+        <node xmi:type="uml:CallBehaviorAction" xmi:id="_EuBQkCQSEeWlqN38Mn9EQA" name="clinchSeamWithSpecialMachine" behavior="_UHZ1YCQSEeWlqN38Mn9EQA">
+          <argument xmi:type="uml:InputPin" xmi:id="_gbSFAiQWEeWlqN38Mn9EQA" name="workpiece" incoming="_wkVMMCQWEeWlqN38Mn9EQA" type="_ajomECQfEeWdwZTMFWWnmg">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gbTTICQWEeWlqN38Mn9EQA" source="PinToParameterLink">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_gbTTISQWEeWlqN38Mn9EQA" key="PinToParameterLink" value="_X9Hl4CQWEeWlqN38Mn9EQA"/>
+            </eAnnotations>
+            <upperBound xmi:type="uml:LiteralInteger" xmi:id="_gbSFAyQWEeWlqN38Mn9EQA" value="1"/>
+          </argument>
+          <argument xmi:type="uml:InputPin" xmi:id="_gbQP0CQWEeWlqN38Mn9EQA" name="desiredForce" incoming="_5mmBcCQXEeWlqN38Mn9EQA">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gbSFACQWEeWlqN38Mn9EQA" source="PinToParameterLink">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_gbSFASQWEeWlqN38Mn9EQA" key="PinToParameterLink" value="_X9I0ACQWEeWlqN38Mn9EQA"/>
+            </eAnnotations>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+            <upperBound xmi:type="uml:LiteralInteger" xmi:id="_gbQP0SQWEeWlqN38Mn9EQA" value="1"/>
+          </argument>
+          <result xmi:type="uml:OutputPin" xmi:id="_gbTTIiQWEeWlqN38Mn9EQA" name="workpiece" outgoing="_xUlkcCQWEeWlqN38Mn9EQA" type="_ajomECQfEeWdwZTMFWWnmg">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gbT6MCQWEeWlqN38Mn9EQA" source="PinToParameterLink">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_gbUhQCQWEeWlqN38Mn9EQA" key="PinToParameterLink" value="_X9Hl4CQWEeWlqN38Mn9EQA"/>
+            </eAnnotations>
+            <upperBound xmi:type="uml:LiteralInteger" xmi:id="_gbTTIyQWEeWlqN38Mn9EQA" value="1"/>
+          </result>
+        </node>
+        <node xmi:type="uml:ValueSpecificationAction" xmi:id="_TuQjUCQXEeWlqN38Mn9EQA" name="30kN">
+          <result xmi:type="uml:OutputPin" xmi:id="_z9RogCQXEeWlqN38Mn9EQA" name="result" outgoing="_4_u1wCQXEeWlqN38Mn9EQA">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+          </result>
+          <value xmi:type="uml:LiteralInteger" xmi:id="_YK5twCQXEeWlqN38Mn9EQA" value="30000"/>
+        </node>
+        <node xmi:type="uml:ValueSpecificationAction" xmi:id="_adOVsCQXEeWlqN38Mn9EQA" name="25kN">
+          <result xmi:type="uml:OutputPin" xmi:id="_19qL4CQXEeWlqN38Mn9EQA" name="result" outgoing="_6Jq5UCQXEeWlqN38Mn9EQA">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+          </result>
+          <value xmi:type="uml:LiteralInteger" xmi:id="_cuU1oCQXEeWlqN38Mn9EQA" value="25000"/>
+        </node>
+        <node xmi:type="uml:ValueSpecificationAction" xmi:id="_jnOnICQXEeWlqN38Mn9EQA" name="140kN">
+          <result xmi:type="uml:OutputPin" xmi:id="_1KtsACQXEeWlqN38Mn9EQA" name="result" outgoing="_5mmBcCQXEeWlqN38Mn9EQA">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+          </result>
+          <value xmi:type="uml:LiteralInteger" xmi:id="_qi1uYCQXEeWlqN38Mn9EQA" value="140000"/>
+        </node>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_2lnsICQJEeWlqN38Mn9EQA" name="ExpertKnowledge">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_WKeaACQKEeWlqN38Mn9EQA">
+        <body>RULE: activities that are not working principles should always be abstract.</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_a_534CQKEeWlqN38Mn9EQA">
+        <body>Note: we could get rid of &quot;WorkingPrinciple&quot; stereotype if we adopt this abstraction / non-abstraction principle to identify working principles.</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_5kv6QCQKEeWlqN38Mn9EQA">
+        <body>Note: we could also JUST specialize &quot;ClinchWithClinchingMachine&quot; - but then we MUST define owned parameters!</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_iiI2ECQREeWlqN38Mn9EQA">
+        <body>RULE: Redefined properties should have the same name. This avoids errors with inherited OCL expressions, which use a property name for navigation (this could be circumvented by the transformation interpreting both the original and the redefining element, and then accounting for the name)</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_WeP1ECdAEeWfnM3CQc11Qw">
+        <body>RULE: (or potential limitation) There may not be more than 1 resource of the same type associated with a working principle (limitation of transformation).</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_7q-KYCdAEeWfnM3CQc11Qw">
+        <body>RULE: (current limitation) Multiplicities must be 1.</body>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Activity" xmi:id="_L-d5ACQKEeWlqN38Mn9EQA" name="ClinchWithDFG500/150">
+        <generalization xmi:type="uml:Generalization" xmi:id="_Yt5fYCQSEeWlqN38Mn9EQA" general="_UHZ1YCQSEeWlqN38Mn9EQA"/>
+        <generalization xmi:type="uml:Generalization" xmi:id="_xR6osCc8EeWfnM3CQc11Qw">
+          <general xmi:type="uml:Activity" href="../DSELibrary/DSELibrary.uml#_IHgUUBT9EeWdZqvVzWkEVA"/>
+        </generalization>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Sp7nQiQREeWlqN38Mn9EQA" name="clinchingMachine" aggregation="composite" association="_Sp7AMCQREeWlqN38Mn9EQA">
+          <type xmi:type="uml:Class" href="../DSELibrary/DSELibrary.uml#_JdLTwBRuEeWi-d7JLeJ82A"/>
+          <redefinedProperty xmi:type="uml:Property" href="../DSELibrary/DSELibrary.uml#_qGz5IhUCEeWdZqvVzWkEVA"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Sp7AMCQREeWlqN38Mn9EQA" memberEnd="_Sp7nQiQREeWlqN38Mn9EQA _Sp8OUCQREeWlqN38Mn9EQA">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Sp7nQCQREeWlqN38Mn9EQA" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Sp7nQSQREeWlqN38Mn9EQA" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_Sp8OUCQREeWlqN38Mn9EQA" name="clinchseamwithdfg500/150" type="_L-d5ACQKEeWlqN38Mn9EQA" association="_Sp7AMCQREeWlqN38Mn9EQA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Activity" xmi:id="_UHZ1YCQSEeWlqN38Mn9EQA" name="ClinchSeamWithDFG500/150" isAbstract="true" node="_X9JbECQWEeWlqN38Mn9EQA _X9KCICQWEeWlqN38Mn9EQA">
+        <generalization xmi:type="uml:Generalization" xmi:id="_YFKEYCQSEeWlqN38Mn9EQA">
+          <general xmi:type="uml:Activity" href="../DSELibrary/DSELibrary.uml#_65ewoBT4EeWdZqvVzWkEVA"/>
+        </generalization>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_X9Hl4CQWEeWlqN38Mn9EQA" name="workpiece" visibility="public" type="_ajomECQfEeWdwZTMFWWnmg" direction="inout" effect="update"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_X9I0ACQWEeWlqN38Mn9EQA" name="desiredForce" effect="read">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+        </ownedParameter>
+        <node xmi:type="uml:ActivityParameterNode" xmi:id="_X9JbECQWEeWlqN38Mn9EQA" name="workpiece" parameter="_X9Hl4CQWEeWlqN38Mn9EQA">
+          <type xmi:type="uml:Class" href="../DSELibrary/DSELibrary.uml#_esQ3gBT5EeWdZqvVzWkEVA"/>
+          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_X9JbESQWEeWlqN38Mn9EQA" value="1"/>
+        </node>
+        <node xmi:type="uml:ActivityParameterNode" xmi:id="_X9KCICQWEeWlqN38Mn9EQA" name="desiredForce" parameter="_X9I0ACQWEeWlqN38Mn9EQA">
+          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_X9KCISQWEeWlqN38Mn9EQA" value="1"/>
+        </node>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ajomECQfEeWdwZTMFWWnmg" name="Workpiece">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ddNbQCQfEeWdwZTMFWWnmg">
+        <general xmi:type="uml:Class" href="../DSELibrary/DSELibrary.uml#_esQ3gBT5EeWdZqvVzWkEVA"/>
+      </generalization>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_i_TK0CQfEeWdwZTMFWWnmg" name="mass" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_m7J8YCQfEeWdwZTMFWWnmg" value="15"/>
+        <redefinedProperty xmi:type="uml:Property" href="../DSELibrary/DSELibrary.uml#_lNSUgBT5EeWdZqvVzWkEVA"/>
+      </ownedAttribute>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_2yThcCQCEeWlqN38Mn9EQA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2yUvkCQCEeWlqN38Mn9EQA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_TZ_nULU5EduiKqCzJMWbGw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_2yVWoCQCEeWlqN38Mn9EQA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2yV9sCQCEeWlqN38Mn9EQA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//modelelements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_Gx8MgLX7EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_2yiK8CQCEeWlqN38Mn9EQA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2yiyACQCEeWlqN38Mn9EQA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//blocks"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_fSw28LX7EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_2yiyASQCEeWlqN38Mn9EQA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2yiyAiQCEeWlqN38Mn9EQA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//portandflows"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_rpx28LX7EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_2yjZECQCEeWlqN38Mn9EQA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2yjZESQCEeWlqN38Mn9EQA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//constraints"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_5WYJ0LX7EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_2yjZEiQCEeWlqN38Mn9EQA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2yjZEyQCEeWlqN38Mn9EQA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//activities"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_C2zXMLX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_2ykAICQCEeWlqN38Mn9EQA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2ykAISQCEeWlqN38Mn9EQA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//allocations"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_NxdG4LX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_2ykAIiQCEeWlqN38Mn9EQA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2ykAIyQCEeWlqN38Mn9EQA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_OOJC4LX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_2yknMCQCEeWlqN38Mn9EQA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2yknMSQCEeWlqN38Mn9EQA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//interactions"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_meOioLX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_2yknMiQCEeWlqN38Mn9EQA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2yknMyQCEeWlqN38Mn9EQA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//statemachines"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_nAF5kLX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_2ylOQCQCEeWlqN38Mn9EQA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2ylOQSQCEeWlqN38Mn9EQA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//usecases"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_neZmMLX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_2-JlECQCEeWlqN38Mn9EQA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-w7A8DrDEeWAc7Y4j_FYgA" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-w7A8TrDEeWAc7Y4j_FYgA" key="Version" value="0.0.14"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-w7A8jrDEeWAc7Y4j_FYgA" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-w7A8zrDEeWAc7Y4j_FYgA" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-w7A9DrDEeWAc7Y4j_FYgA" key="Date" value="2015-08-04"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-w7A9TrDEeWAc7Y4j_FYgA" key="Author" value="Sebastian J. I. Herzig"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2-JlESQCEeWlqN38Mn9EQA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../DSEProfile/DSEProfile.profile.uml#_Zeu80DrDEeWAc7Y4j_FYgA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="../DSEProfile/DSEProfile.profile.uml#__uZjMBNuEeWthIkkIMQnYA"/>
+    </profileApplication>
+  </uml:Model>
+  <Blocks:Block xmi:id="_KhiFICQDEeWlqN38Mn9EQA" base_Class="_KhOjICQDEeWlqN38Mn9EQA"/>
+  <DSEProfile:WorkingPrinciple xmi:id="_BjM-kCQLEeWlqN38Mn9EQA" base_Activity="_L-d5ACQKEeWlqN38Mn9EQA"/>
+  <Blocks:Block xmi:id="_ajrCUCQfEeWdwZTMFWWnmg" base_Class="_ajomECQfEeWdwZTMFWWnmg"/>
+  <DSEProfile:required xmi:id="_i_VnECQfEeWdwZTMFWWnmg" base_Property="_i_TK0CQfEeWdwZTMFWWnmg"/>
+  <DSEProfile:Objective xmi:id="_J_YUICQgEeWdwZTMFWWnmg" base_Constraint="_JBNbsCQgEeWdwZTMFWWnmg"/>
+</xmi:XMI>
